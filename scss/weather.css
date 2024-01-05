@@ -1,0 +1,37 @@
+#map {
+  height: 100%;
+}
+
+.link-cities {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+}
+.link-cities:hover {
+  border-top: 1px solid #98989b;
+  border-bottom: 1px solid #98989b;
+  color: black;
+  font-size: 30px;
+}
+
+.color {
+  background-color: rgba(250, 251, 255, 0.75);
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid #98989b;
+  border-bottom: 1px solid #98989b;
+}
+
+@media (max-width: 700px) {
+  .tab-content {
+    font-size: small;
+  }
+}
+@media (max-width: 450px) {
+  .tab-content {
+    font-size: xx-small;
+  }
+}
+
+/*# sourceMappingURL=weather.css.map */

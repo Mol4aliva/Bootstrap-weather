@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estonia weather</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/weather.css">
+
+</head>
+<body id="page-top">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">Estonia weather</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#services">Weather</a></li>
+                <li class="nav-item"><a class="nav-link" href="#portfolio">Climate</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Welcome!</div>
+        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#services">all about the weather</a>
+    </div>
+</header>
+<!-- Services-->
+<section class="page-section" id="services">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Weather</h2>
+            <div class="py-5 color">
+                <div class="container">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active link-cities" id="tallinn-tab" data-bs-toggle="tab"
+                                    data-bs-target="#tallinn" type="button" role="tab" aria-controls="tallinn"
+                                    aria-selected="true">Tallinn
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link link-cities" id="tartu-tab" data-bs-toggle="tab"
+                                    data-bs-target="#tartu" type="button" role="tab" aria-controls="tartu"
+                                    aria-selected="false">Tartu
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link link-cities" id="parnu-tab" data-bs-toggle="tab"
+                                    data-bs-target="#parnu" type="button" role="tab" aria-controls="parnu"
+                                    aria-selected="false">Parnu
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link link-cities" id="narva-tab" data-bs-toggle="tab"
+                                    data-bs-target="#narva" type="button" role="tab" aria-controls="narva"
+                                    aria-selected="false">Narva
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link link-cities" id="sillamae-tab" data-bs-toggle="tab"
+                                    data-bs-target="#sillamae" type="button" role="tab" aria-controls="sillamae"
+                                    aria-selected="false">Sillamae
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link link-cities" id="maardu-tab" data-bs-toggle="tab"
+                                    data-bs-target="#maardu" type="button" role="tab" aria-controls="maardu"
+                                    aria-selected="false">Maardu
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link link-cities" id="rakvere-tab" data-bs-toggle="tab"
+                                    data-bs-target="#rakvere" type="button" role="tab" aria-controls="rakvere"
+                                    aria-selected="false">Rakvere
+                            </button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link link-cities" id="kuressaare-tab" data-bs-toggle="tab"
+                                    data-bs-target="#kuressaare" type="button" role="tab" aria-controls="kuressaare"
+                                    aria-selected="false">Kuressaare
+                            </button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="tallinn" role="tabpanel"
+                             aria-labelledby="tallinn-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Tallinn</h2>
+                                <div id="forecast-table-tallinn" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="tallinn-map"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="tartu" role="tabpanel" aria-labelledby="tartu-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Tartu</h2>
+                                <div id="forecast-table-tartu" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="tartu-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="parnu" role="tabpanel" aria-labelledby="parnu-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Parnu</h2>
+                                <div id="forecast-table-parnu" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="parnu-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="narva" role="tabpanel" aria-labelledby="narva-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Narva</h2>
+                                <div id="forecast-table-narva" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="narva-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="sillamae" role="tabpanel" aria-labelledby="sillamae-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Sillamae</h2>
+                                <div id="forecast-table-sillamae" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="sillamae-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="maardu" role="tabpanel" aria-labelledby="maardu-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Maardu</h2>
+                                <div id="forecast-table-maardu" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="maardu-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="rakvere" role="tabpanel" aria-labelledby="rakvere-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Rakvere</h2>
+                                <div id="forecast-table-rakvere" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="rakvere-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="kuressaare" role="tabpanel" aria-labelledby="kuressaare-tab">
+                            <div class="container">
+                                <h2 class="mt-5 mb-3">Weather Forecast - Kuressaare</h2>
+                                <div id="forecast-table-kuressaare" class="table-responsive mt-5"></div>
+                                <div class="card">
+                                    <div id="kuressaare-map"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+</section>
+
+<!-- Portfolio Grid-->
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">What is the climate like in Estonia?</h2>
+            <h3 class="section-subheading text-muted">The climate in Estonia is situated in a transitional zone, located
+                in the northern part of the temperate climatic belt and between the maritime and continental climates.
+                Northern Europe and Estonia are positioned at a northern latitude but experience a temperate climate due
+                to the warming influence of the North Atlantic. Estonia is a country with four distinct seasons.
+                February is the coldest month in Estonia with a temperature of -5.7 degrees Celsius, while July is the
+                warmest month with a temperature of 16.4 degrees Celsius. The average temperature across the country is
+                5.2 degrees Celsius. Estonia's climate is influenced by the North Atlantic Current and minimal Icelandic
+                conditions. The country receives a significant amount of precipitation, with the annual evaporation
+                being less than the total precipitation, making Estonia a humid country. The highest precipitation
+                occurs in Sakala-Haanja and to the west of the Highland. Snowfall in Estonia lasts from mid-December to
+                the end of March. The climate of the four seasons in Estonia varies distinctly from one another.</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 1-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..."/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">What is the climate like in spring?</div>
+                        <div class="portfolio-caption-subheading text-muted">Spring in Estonia is usually dry and mild.
+                            Snowfall can be observed until the end of March. Snowfall in March is replaced by
+                            thunderstorms in April. The hottest month of the spring season is May when the temperature
+                            reaches 20-30 degrees.
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 2-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..."/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">What is the climate like in summer?</div>
+                        <div class="portfolio-caption-subheading text-muted">In the summer season in Estonia, it is warm
+                            and mild, but on the Baltic Islands, it can be cool. On some days in April and May, the
+                            temperature can rise to 30-35 degrees. However, the average spring temperature is usually
+                            around 20 degrees. Although July is considered the hottest month, the highest recorded
+                            temperature in August was 35.6 degrees.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 3-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..."/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">What is the climate like in autumn?</div>
+                        <div class="portfolio-caption-subheading text-muted">
+                            In the autumn season in Estonia, the weather is usually humid and windy. In mid-September,
+                            temperatures may occur, but thunderstorms won't be long in coming. Scandinavia often
+                            experiences hurricanes, and during the autumn period in Estonia's climate, there can be
+                            heavy rains. Flooding can lead to coastal inundation or winds from the shore, as the speed
+                            of some storms reaches 35 m/s. The onset of snowfall may be closer to the end of November.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                <!-- Portfolio item 4-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..."/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">What is the climate like in winter?</div>
+                        <div class="portfolio-caption-subheading text-muted">
+                            The winter season in Estonia corresponds to January and February. These are the coldest
+                            days. The climate is cold in the eastern part of Estonia, while the southern coast
+                            experiences milder temperatures. In Estonia, January and February are the coldest periods of
+                            the year, with temperatures dropping to -35 degrees Celsius. However, the lowest temperature
+                            recorded in the country is known to be -43.5 degrees Celsius. Snowstorms in Estonia
+                            typically accompany cyclones.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                <!-- Portfolio item 5-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..."/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Where to go in bad weather in Tallinn?</div>
+                        <div class="portfolio-caption-subheading text-muted">
+                            The capital of Estonia is home to interesting museums, interactive exhibitions, art centers,
+                            cinemas, and theaters, as well as cozy cafes and restaurants. Of course, you can also warm
+                            up in saunas and swimming pools. There's a wide variety of options to choose from!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <!-- Portfolio item 6-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..."/>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Where to go in bad weather in Tartu?</div>
+                        <div class="portfolio-caption-subheading text-muted">The university town of Tartu is the
+                            second-largest city in Estonia and the oldest in the Baltic countries. Tartu boasts several
+                            charming museums, such as the A. Le Coq Beer Museum, the Tartu Toy Museum, the University of
+                            Tartu Museum, and one of the country's largest, the Estonian National Museum. After
+                            exploring the exhibitions, you can immerse yourself in the lively atmosphere of bohemian
+                            bars, cafes, and restaurants.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact-->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Contact Us</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!-- Name input-->
+                        <input class="form-control" id="name" type="text" placeholder="Your Name *"
+                               data-sb-validations="required"/>
+                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                    </div>
+                    <div class="form-group">
+                        <!-- Email address input-->
+                        <input class="form-control" id="email" type="email" placeholder="Your Email *"
+                               data-sb-validations="required,email"/>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                    </div>
+                    <div class="form-group mb-md-0">
+                        <!-- Phone number input-->
+                        <input class="form-control" id="phone" type="tel" placeholder="Your Phone *"
+                               data-sb-validations="required"/>
+                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-textarea mb-md-0">
+                        <!-- Message input-->
+                        <textarea class="form-control" id="message" placeholder="Your Message *"
+                                  data-sb-validations="required"></textarea>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center text-white mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br/>
+                </div>
+            </div>
+
+            <div class="d-none" id="submitErrorMessage">
+                <div class="text-center text-danger mb-3">Error sending message!</div>
+            </div>
+            <!-- Submit Button-->
+            <div class="text-center">
+                <button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send
+                    Message
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="footer py-4">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+            <div class="col-lg-4 my-3 my-lg-0">
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                        class="fab fa-twitter"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                        class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Portfolio Modals-->
+<!-- Portfolio item 1 modal popup-->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal"/>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..."/>
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                nostrum, reiciendis facere nemo!</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Client:</strong>
+                                    Threads
+                                </li>
+                                <li>
+                                    <strong>Category:</strong>
+                                    Illustration
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-xmark me-1"></i>
+                                Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio item 2 modal popup-->
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal"/>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/2.jpg" alt="..."/>
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                nostrum, reiciendis facere nemo!</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Client:</strong>
+                                    Explore
+                                </li>
+                                <li>
+                                    <strong>Category:</strong>
+                                    Graphic Design
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-xmark me-1"></i>
+                                Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio item 3 modal popup-->
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal"/>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/3.jpg" alt="..."/>
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                nostrum, reiciendis facere nemo!</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Client:</strong>
+                                    Finish
+                                </li>
+                                <li>
+                                    <strong>Category:</strong>
+                                    Identity
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-xmark me-1"></i>
+                                Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio item 4 modal popup-->
+<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal"/>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4.jpg" alt="..."/>
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                nostrum, reiciendis facere nemo!</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Client:</strong>
+                                    Lines
+                                </li>
+                                <li>
+                                    <strong>Category:</strong>
+                                    Branding
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-xmark me-1"></i>
+                                Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio item 5 modal popup-->
+<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal"/>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5.jpg" alt="..."/>
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                nostrum, reiciendis facere nemo!</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Client:</strong>
+                                    Southwest
+                                </li>
+                                <li>
+                                    <strong>Category:</strong>
+                                    Website Design
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-xmark me-1"></i>
+                                Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Portfolio item 6 modal popup-->
+<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg" alt="Close modal"/>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="modal-body">
+                            <!-- Project details-->
+                            <h2 class="text-uppercase">Project Name</h2>
+                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                            <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6.jpg" alt="..."/>
+                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
+                                repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
+                                nostrum, reiciendis facere nemo!</p>
+                            <ul class="list-inline">
+                                <li>
+                                    <strong>Client:</strong>
+                                    Window
+                                </li>
+                                <li>
+                                    <strong>Category:</strong>
+                                    Photography
+                                </li>
+                            </ul>
+                            <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+                                <i class="fas fa-xmark me-1"></i>
+                                Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/scripts.js"></script>
+<script src="js/weather.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+</body>
+</html>

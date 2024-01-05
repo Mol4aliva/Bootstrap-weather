@@ -1,0 +1,30 @@
+@import "config";
+
+#map {
+  height: 100%;
+}
+
+.link-cities {
+  text-decoration: none;
+  color: black;
+  font-size: $size;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+
+  &:hover {
+    border-top: 1px solid $color-silver;
+    border-bottom: 1px solid $color-silver;
+    color: $color-black;
+    font-size: $size;
+  }
+
+}
+
+.color {
+  background-color: rgba(250 251 255 / 75%);
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid $color-silver;
+  border-bottom: 1px solid $color-silver;
+}
+
+@import "mobile";
